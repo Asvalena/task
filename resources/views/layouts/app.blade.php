@@ -30,7 +30,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class='new item'>
+                            <a href="{{route('tasks.index')}}" class = 'nav-link'>Uzduotys</a>
+                        </li>
+                        <li class='new item'>
+                            <a href="{{route('tasks.create)}}" class = 'nav-link'> nauja Uzduotis</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

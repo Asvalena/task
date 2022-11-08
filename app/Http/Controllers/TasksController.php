@@ -14,7 +14,9 @@ class TasksController extends Controller
      */
     public function index()
     {
-        //
+        $tasks=Tasks::all();
+        return view ('tasks.index');
+        'tasks' =>$tasks;
     }
 
     /**
@@ -24,7 +26,7 @@ class TasksController extends Controller
      */
     public function create()
     {
-        //
+        return view('tasks.create');
     }
 
     /**
@@ -35,7 +37,11 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tasks= new Tasks();
+        $tasks->name=$request->name;
+        $tasks->aprasymas=$request->aprasymas; 
+        $tasks->save();
+        return redirect()->route ('tasks.index');
     }
 
     /**
@@ -57,7 +63,7 @@ class TasksController extends Controller
      */
     public function edit(Tasks $tasks)
     {
-        //
+        return view( 'tasks.edit',['tasks'=>$tasks]);
     }
 
     /**
